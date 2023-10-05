@@ -1,16 +1,18 @@
 // import { useState } from 'react';
 
 import './App.css';
+import Gameboard from './components/Gameboard';
 
 function App() {
   return (
     <>
       <div className="header">
-        <heading>Memory Game</heading>
+        <div>Memory Game</div>
         <div>Scoreboard</div>
       </div>
-
-      <div>Container For game</div>
+      <div className="grid-container">
+        <Gameboard />
+      </div>
     </>
   );
 }

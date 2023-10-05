@@ -6,3 +6,19 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.character-grid {
+  background-color: rgb(40, 39, 39);
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+  /* width: 300px; */
+}
+
+.character-image {
+  margin: 30px;
+}
