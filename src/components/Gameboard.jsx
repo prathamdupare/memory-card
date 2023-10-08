@@ -1,9 +1,7 @@
-// import React from 'react';
-
 import { useEffect, useState } from 'react';
 import Card from './Card';
 
-function CreateCards({ agents }) {
+function CreateCards({ agents, areAllFlipped, toggleAllCards }) {
   const cardNumber = 8;
   const cards = [];
 
@@ -13,7 +11,9 @@ function CreateCards({ agents }) {
         key={i}
         character={agents[i].displayName}
         backgroundImage={agents[i].displayIcon}
-      />
+        isFlipped={areAllFlipped}
+        onClick={toggleAllCards}
+      />,
     );
   }
 
@@ -22,6 +22,7 @@ function CreateCards({ agents }) {
 
 export default function Gameboard() {
   const [agents, setAgents] = useState([]);
+  const [areAllFlipped, setAreAllFlipped] = useState(false);
 
   useEffect(() => {
     fetch('https://valorant-api.com/v1/agents/')
@@ -30,12 +31,23 @@ export default function Gameboard() {
         setAgents(json.data);
         console.log(json.data);
       });
-    // console.log(api);
   }, []);
+
+  const toggleAllCards = () => {
+    setAreAllFlipped(!areAllFlipped);
+  };
 
   return (
     <>
-      {agents.length > 0 ? <CreateCards agents={agents} /> : <p>Loading...</p>}
+      {agents.length > 0 ? (
+        <CreateCards
+          agents={agents}
+          areAllFlipped={areAllFlipped}
+          toggleAllCards={toggleAllCards}
+        />
+      ) : (
+        <p>Loading...</p>
+      )}
     </>
   );
 }

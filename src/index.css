@@ -1,5 +1,24 @@
 /* import backgroundImage from './path-to-your-image.jpg'; */
 
+body {
+  background-color: black;
+}
+
+.game-heading {
+  color: black;
+  background-color: white;
+
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.scoreboard {
+  color: black;
+  padding: 10px;
+  background-color: white;
+  border-radius: 7px;
+}
+
 .header {
   display: flex;
   width: 100%;
@@ -11,14 +30,29 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.character-grid {
+.card-front {
   background-color: rgb(40, 39, 39);
   color: white;
   margin: 10px;
   border-radius: 10px;
-  /* width: 300px; */
+  width: 300px;
+  height: 370px;
+}
+
+.card-back {
+  background-color: rgb(40, 39, 39);
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+  width: 300px;
+
+  height: 370px;
 }
 
 .character-image {
   margin: 30px;
+}
+
+.hidden {
+  display: none;
 }

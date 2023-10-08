@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <div className="header">
-        <div>Memory Game</div>
-        <div>Scoreboard</div>
+        <div className="game-heading">Memory Game</div>
+        <div className="scoreboard">Scoreboard</div>
       </div>
       <div className="grid-container">
         <Gameboard />
